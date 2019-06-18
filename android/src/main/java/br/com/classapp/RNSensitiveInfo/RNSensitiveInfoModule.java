@@ -12,7 +12,6 @@ import android.security.keystore.KeyGenParameterSpec;
 import android.security.keystore.KeyInfo;
 import java.security.InvalidKeyException;
 import android.security.keystore.KeyProperties;
-import android.support.annotation.NonNull;
 import android.util.Base64;
 import android.util.Log;
 
@@ -214,7 +213,6 @@ public class RNSensitiveInfoModule extends ReactContextBaseJavaModule {
         return getReactApplicationContext().getSharedPreferences(name, Context.MODE_PRIVATE);
     }
 
-    @NonNull
     private String sharedPreferences(ReadableMap options) {
         String name = options.hasKey("sharedPreferencesName") ? options.getString("sharedPreferencesName") : "shared_preferences";
         if (name == null) {
